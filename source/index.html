@@ -13,9 +13,9 @@
       <div class="header__container">
         <a class="header__logo logo" href="/">
           <picture>
-            <source media="(min-width: 1320px)" srcset="">
-            <source media="(min-width: 768px)" srcset="">
-            <img class="logo__image" src="" width="32" height="36" alt="Логотип Drink2Go.">
+            <source media="(min-width: 1440px)" srcset="images/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="images/logo-tablet.svg">
+            <img class="logo__image" src="images/logo-mobile.svg" width="32" height="36" alt="Логотип Drink2Go.">
           </picture>
         </a>
 
@@ -58,7 +58,10 @@
 
       <header class="offer-slider offer-slider--1">
         <div class="container">
-          <img class="offer-slider__img" src="" alt="Банка кофе Декаф Флэт Уайт.">
+          <picture>
+            <source srcset="images/flat-white@1x.webp 1x, images/flat-white@2x.webp 2x">
+            <img class="offer-slider__img" src="images/flat-white@1x.png" srcset="images/flat-white@2x.png 2x" width="280" height="280" alt="Банка кофе Декаф Флэт Уайт.">
+          </picture>
 
           <div class="offer-slider__container">
             <h2 class="offer-slider__title section-title">Новинка!</h2>

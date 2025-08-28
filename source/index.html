@@ -10,47 +10,49 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__container">
-        <a class="header__logo logo" href="/">
-          <picture>
-            <source media="(min-width: 1440px)" srcset="images/logo-desktop.svg">
-            <source media="(min-width: 768px)" srcset="images/logo-tablet.svg">
-            <img class="logo__image" src="images/logo-mobile.svg" width="32" height="36" alt="Логотип Drink2Go.">
-          </picture>
-        </a>
+      <div class="header__container container">
+        <div class="header__inner">
+          <a class="header__logo logo" href="/">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="images/logo-desktop.svg">
+              <source media="(min-width: 768px)" srcset="images/logo-tablet.svg">
+              <img class="logo__image" src="images/logo-mobile.svg" width="32" height="36" alt="Логотип Drink2Go.">
+            </picture>
+          </a>
 
-        <span class="header__text">Интернет-магазин кофейных напитков</span>
+          <span class="header__text">Интернет-магазин кофейных напитков</span>
+        </div>
+
+        <nav class="header__nav nav header__nav--closed header__nav--no-js" id="site-nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link nav__link--current" href="/" aria-current="page">Главная</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#catalog">Каталог</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Доставка</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">О нас</a>
+            </li>
+          </ul>
+
+          <ul class="nav__list user-nav">
+            <li class="nav__item">
+              <a class="nav__link" href="#">Войти</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Корзина</a>
+            </li>
+          </ul>
+
+          <button class="nav__toggler" type="button" aria-controls="site-nav" aria-expanded="false">
+            <span class="visually-hidden">Открыть меню сайта</span>
+          </button>
+        </nav>
       </div>
-
-      <nav class="header__nav nav header__nav--closed header__nav--no-js" id="site-nav" aria-label="Основная навигация">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a class="nav__link nav__link--current" href="/" aria-current="page">Главная</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#catalog">Каталог</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#">Доставка</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#">О нас</a>
-          </li>
-        </ul>
-
-        <ul class="nav__list user-nav">
-          <li class="nav__item">
-            <a class="nav__link" href="#">Войти</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#">Корзина</a>
-          </li>
-        </ul>
-
-        <button class="nav__toggler" type="button" aria-controls="site-nav" aria-expanded="false">
-          <span class="visually-hidden">Открыть меню сайта</span>
-        </button>
-      </nav>
     </header>
 
     <main class="main main-container">
@@ -125,9 +127,9 @@
           <h2 class="catalog__title section-title">Каталог</h2>
           <p class="catalog__subtitle section-subtitle">Каталог кофейных напитков</p>
 
-          <form class="filters" action="https://echo.htmlacademy.ru" method="post">
+          <form class="catalog__filters filters" action="https://echo.htmlacademy.ru" method="post">
             <h3 class="visually-hidden">Фильтры товаров</h3>
-
+<!--  -->
             <fieldset class="filters__group">
               <legend class="filters__title">Цена</legend>
               <div class="range-container">
@@ -306,7 +308,9 @@
 
             <ul class="catalog-cards__pagination pagination">
               <li class="pagination__item">
-                <a class="pagination__link button button--light" href="#">Назад</a>
+                <a class="pagination__link button button--light" href="#">
+                  <span class="pagination__text">Назад</span>
+                </a>
               </li>
               <li class="pagination__item">
                 <a class="pagination__link button button--light" href="#">1</a>
@@ -318,7 +322,9 @@
                 <a class="pagination__link button button--light" href="#">3</a>
               </li>
               <li class="pagination__item">
-                <a class="pagination__link button button--light" href="#">Вперед</a>
+                <a class="pagination__link button button--light" href="#">
+                  <span class="pagination__text">Вперед</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -332,28 +338,29 @@
     </main>
 
     <footer class="footer">
-      <div class="footer__container">
-        <div class="footer__socials">
-          <a class="footer__logo logo" href="/">
+      <div class="footer__container container">
+        <div class="footer__socials socials">
+          <a class="socials__logo logo" href="/">
             <picture>
               <source media="(min-width: 768px)" srcset="images/logo-desktop.svg">
               <img class="logo__image" src="images/logo-tablet.svg" width="82" height="36" alt="Логотип Drink2Go.">
             </picture>
           </a>
+          <span class="socials__text">Интернет-магазин кофейных напитков</span>
 
-          <ul class="footer__socials-list">
-            <li class="footer__socials-item">
-              <a class="footer__socials-link" href="#">
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a class="socials__link" href="#">
                 <span class="visually-hidden">Вконтакте</span>
               </a>
             </li>
-            <li class="footer__socials-item">
-              <a class="footer__socials-link" href="#">
+            <li class="socials__item">
+              <a class="socials__link" href="#">
                 <span class="visually-hidden">Пинтерест</span>
               </a>
             </li>
-            <li class="footer__socials-item">
-              <a class="footer__socials-link" href="#">
+            <li class="socials__item">
+              <a class="socials__link" href="#">
                 <span class="visually-hidden">Одноклассники</span>
               </a>
             </li>
@@ -403,7 +410,8 @@
           </div>
         </nav>
 
-        <a class="footer__copyright" href="https://htmlacademy.ru/intensive/adaptive">Разработано в HTML Academy
+        <a class="footer__copyright" href="https://htmlacademy.ru/intensive/adaptive">
+          <span>Разработано в HTML Academy</span>
           <img width="12" height="16" src="images/html-academy-logo.svg" alt="Логотип HTML Академии.">
         </a>
       </div>

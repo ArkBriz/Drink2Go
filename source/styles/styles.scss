@@ -1,8 +1,24 @@
 /* GLOBAL */
 @import "common/variables.scss";
-@import "common/global.scss";
 @import "common/media.scss";
+@import "common/global.scss";
 @import "common/fonts.scss";
 
 /* BLOCKS */
+@import "blocks/button.scss";
+@import "blocks/header.scss";
+@import "blocks/logo.scss";
+@import "blocks/nav.scss";
+@import "blocks/section-title.scss";
+@import "blocks/section-subtitle.scss";
+@import "blocks/offer-slider.scss";
+@import "blocks/advantages.scss";
+@import "blocks/catalog.scss";
+@import "blocks/filters.scss";
+@import "blocks/catalog-cards.scss";
+@import "blocks/sorting.scss";
+@import "blocks/card.scss";
+@import "blocks/pagination.scss";
+@import "blocks/footer.scss";
+@import "blocks/socials.scss";
 

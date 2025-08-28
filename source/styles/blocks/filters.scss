@@ -1,0 +1,27 @@
+.filters__group {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+
+  @include media("desktop") {
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.filters__title {
+  margin-bottom: 20px;
+  padding: 0;
+
+  font-weight: 600;
+}
+
+.filters__buttons {
+  display: grid;
+  gap: 20px;
+}

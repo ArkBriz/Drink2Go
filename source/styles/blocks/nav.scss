@@ -1,0 +1,26 @@
+.nav {
+  font-weight: 500;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav__item {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.nav__link {
+  color: $black;
+}
+
+.nav__toggler {
+  @include media("tablet") {
+    display: none;
+  }
+}

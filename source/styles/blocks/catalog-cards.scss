@@ -1,0 +1,23 @@
+.catalog-cards__list {
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+
+  list-style-type: none;
+
+  @include media("tablet") {
+    margin-bottom: 70px;
+  }
+
+  @include media("desktop") {
+    margin-bottom: 60px;
+  }
+}
+
+.catalog-cards__item {
+  padding: 40px 20px 20px;
+
+  @include media("tablet") {
+    padding: 50px 30px 30px;
+  }
+}

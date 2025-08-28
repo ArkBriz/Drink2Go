@@ -1,0 +1,61 @@
+.offer-slider {
+  padding: 20px 0 60px;
+  text-align: center;
+  background-color: $flat-white;
+
+  @include media("tablet") {
+    padding: 60px 0 496px;
+    background-image: linear-gradient(to bottom, $flat-white 77%, $white 25%);
+  }
+}
+
+.offer-slider__image {
+  display: block;
+}
+
+.offer-slider__title {
+  margin: 10px 0 4px;
+}
+
+.offer-slider__name {
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 700;
+
+  @include media("tablet") {
+    margin-bottom: 16px;
+
+    font-size: 56px;
+    line-height: 80px;
+  }
+}
+
+.offer-slider__description {
+  margin: 0;
+  margin-bottom: 20px;
+
+  @include media("tablet") {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @include media("desktop") {
+    margin-bottom: 40px;
+  }
+}
+
+.offer-slider__price-inner {
+  line-height: 32px;
+}
+
+.offer-slider__price-old {
+  font-size: 16px;
+}
+
+.offer-slider__price-new {
+  font-size: 20px;
+  font-weight: 600;
+}

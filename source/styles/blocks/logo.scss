@@ -1,0 +1,16 @@
+.logo {
+  display: block;
+}
+
+.logo__image {
+  @include media("tablet") {
+    width: 82px;
+    height: 36px;
+  }
+
+  @include media("desktop") {
+    width: 170px;
+  }
+}
+
+

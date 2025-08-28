@@ -1,0 +1,33 @@
+.header {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.header__container {
+  padding: 0;
+
+  @include media("tablet") {
+    padding: 0 20px;
+  }
+
+  @include media("desktop") {
+    padding: 0 40px;
+  }
+}
+
+.header__logo {
+  padding: 12px 20px;
+
+  @include media("tablet") {
+    padding: 0;
+  }
+}
+
+.header__text {
+  display: none;
+
+  @include media("desktop") {
+    display: block;
+  }
+}
+

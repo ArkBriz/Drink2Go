@@ -11,11 +11,29 @@
   }
 }
 
+.catalog .container {
+  padding: 0 20px;
+
+  @include media("desktop") {
+    padding: 0 40px;
+  }
+}
+
+.catalog__container {
+  @include media("desktop") {
+    display: flex;
+  }
+}
+
 .catalog__filters {
   margin-bottom: 36px;
 
   @include media("tablet") {
     margin-bottom: 44px;
+  }
+
+  @include media("desktop") {
+    margin-right: 30px;
   }
 }
 

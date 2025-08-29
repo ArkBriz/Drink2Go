@@ -1,25 +1,137 @@
 .nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
   font-weight: 500;
-  letter-spacing: 2%;
   text-transform: uppercase;
+
+  &--closed .nav__list {
+    display: none;
+
+    @include media("tablet") {
+      display: block;
+    }
+  }
+
+  // &--no-js .nav__list,
+  &--open .nav__list {
+    display: block;
+  }
 }
 
-.nav__list {
+.nav__container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav__logo {
+  padding: 12px 20px;
+
+  @include media("tablet") {
+    padding: 0;
+  }
+}
+
+.nav__logo-descriptor {
+  display: none;
+
+  @include media("desktop") {
+    display: block;
+
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: none;
+  }
+}
+
+.nav .nav__list {
+  @include media("mobile") {
+    width: 100%;
+  }
+
+  @include media("tablet") {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  @include media("desktop") {
+    max-width: 650px;
+  }
+}
+
+.nav__list,
+.nav__list-user {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
+.nav__list .nav__item {
+  border-top: 1px solid $secondary;
+
+  @include media("tablet") {
+    border-top: none;
+  }
+}
+
+.nav__list-user {
+  display: flex;
+  top: 0;
+  margin-left: auto;
+
+  @include media("tablet") {
+    order: 1;
+    margin-left: 0;
+  }
+}
+
 .nav__item {
-  padding: 20px 0;
   text-align: center;
 }
 
 .nav__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
   color: $black;
+
+  @include media("tablet") {
+    padding: 32px 20px;
+  }
+}
+
+.nav__list-user .nav__link {
+  padding: 22px;
+
+  @include media("tablet") {
+    padding: 32px 22px;
+  }
+}
+
+.nav__link-text {
+  position: fixed;
+  transform: scale(0);
+
+  @include media("desktop") {
+    position: relative;
+    transform: scale(1);
+  }
 }
 
 .nav__toggler {
+  width: 60px;
+  height: 60px;
+  padding: 24px 22px;
+  border: none;
+
   @include media("tablet") {
     display: none;
   }

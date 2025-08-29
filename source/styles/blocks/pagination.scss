@@ -1,12 +1,29 @@
 .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 .pagination__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 10px;
+
   &--current {
     font-weight: 600;
     color: $black;
+  }
+}
+
+.pagination__text {
+  @include media("mobile") {
+    position: fixed;
+    transform: scale(0);
   }
 }

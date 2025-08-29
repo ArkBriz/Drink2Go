@@ -33,7 +33,14 @@
   list-style-type: none;
 
   @include media("tablet") {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px 30px;
     text-align: left;
+  }
+
+  @include media("desktop") {
+    text-align: center;
   }
 }
 
@@ -43,6 +50,23 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @include media("tablet") {
+    width: 339px;
+    margin-bottom: 0;
+    padding-left: 72px;
+    padding-top: 0;
+  }
+
+  @include media("desktop") {
+    width: 318px;
+    padding-left: 0;
+    padding-top: 76px;
+
+    &:nth-child(even) {
+      width: 317px;
+    }
   }
 }
 

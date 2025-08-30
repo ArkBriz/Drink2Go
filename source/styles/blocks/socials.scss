@@ -26,10 +26,52 @@
 }
 
 .socials__link {
+  position: relative;
   display: block;
   width: 40px;
   height: 40px;
   padding: 10px;
+  border-radius: 4px;
 
-  outline: 1px solid tomato;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: block;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+
+    background-color: $grey;
+  }
+
+  &--vk::before {
+    mask-image: url("../../icons/stack.svg#vk");
+  }
+
+  &--pinterest::before {
+    mask-image: url("../../icons/stack.svg#pinterest");
+  }
+
+  &--ok::before {
+    mask-image: url("../../icons/stack.svg#ok");
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    background-color: $primary;
+  }
+
+  &:active {
+    background-color: rgba($primary, 0.25);;
+  }
 }

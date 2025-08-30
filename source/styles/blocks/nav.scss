@@ -30,10 +30,10 @@
 }
 
 .nav__logo {
-  padding: 12px 20px;
+  padding: 10px 20px;
 
   @include media("tablet") {
-    padding: 0;
+    padding: 20px 0;
   }
 }
 
@@ -52,6 +52,7 @@
 .nav .nav__list {
   @include media("mobile") {
     width: 100%;
+    order: 1;
   }
 
   @include media("tablet") {
@@ -83,21 +84,21 @@
 
 .nav__list-user {
   display: flex;
-  top: 0;
   margin-left: auto;
 
   @include media("tablet") {
-    order: 1;
     margin-left: 0;
   }
 }
 
 .nav__item {
+  position: relative;
   text-align: center;
 }
 
 .nav__link {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   padding: 20px 0;
@@ -105,6 +106,30 @@
 
   @include media("tablet") {
     padding: 32px 20px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $primary;
+  }
+
+  &:active {
+    background-color: $secondary;
+  }
+
+  &--current {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &--current::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $primary;
   }
 }
 
@@ -114,6 +139,11 @@
   @include media("tablet") {
     padding: 32px 22px;
   }
+}
+
+.nav__link:hover .nav__icon,
+.nav__link:focus .nav__icon {
+  fill: currentColor;
 }
 
 .nav__link-text {
@@ -129,10 +159,50 @@
 .nav__toggler {
   width: 60px;
   height: 60px;
-  padding: 24px 22px;
+  padding: 22px 22px;
+  background-color: $white;
   border: none;
+
+  &:active {
+    background-color: $secondary;
+  }
 
   @include media("tablet") {
     display: none;
+  }
+}
+
+.nav--closed .nav__toggler::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  margin-top: -6.5px;
+
+  background-color: $black;
+  box-shadow:
+      0 5.25px $black,
+      0 10.5px $black;
+}
+
+.nav--open .nav__toggler {
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 1.5px;
+
+    background-color: $black;
+  }
+
+  &::before {
+    margin-top: -1px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    margin-top: -1.5px;
+    transform: rotate(-45deg);
   }
 }

@@ -9,6 +9,7 @@
   }
 
   @include media("desktop") {
+    padding-top: 0;
     background-image: none;
   }
 }
@@ -34,6 +35,7 @@
 
   @include media("desktop") {
     order: 0;
+    padding-top: 30px;
   }
 }
 
@@ -129,8 +131,115 @@
 
   @include media("desktop") {
     display: flex;
+    gap: 8px;
     margin: 0 auto;
     padding: 0;
+    padding-bottom: 70px;
     list-style-type: none;
+  }
+}
+
+.offer-slider__pagination-button {
+  display: flex;
+  align-items: center;
+  width: 64px;
+  height: 24px;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $white;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    background-color: rgba($primary, 0.25);
+  }
+
+  &--current::before,
+  &--current:hover::before,
+  &--current:focus::before,
+  &--current:active::before {
+    background-color: $primary;
+  }
+}
+
+.offer-slider__button {
+  position: absolute;
+  top: 49%;
+  width: 25px;
+  height: 40px;
+  padding: 10px 10px 10px 4px;
+  background-color: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    mask-image: url("../../icons/arrow.svg");
+    mask-size: 11px 20px;
+    mask-repeat: no-repeat;
+    mask-position: center left 4px;
+    background-color: $primary;
+  }
+
+  &:active {
+    background-color: $secondary;
+  }
+
+  @include media("tablet") {
+    top: 36%;
+  }
+
+  @include media("desktop") {
+    top: 0;
+    width: 80px;
+    height: 100%;
+    padding: 0;
+
+    &::before {
+      mask-position: center;
+    }
+
+    &:hover,
+    &:focus {
+      background-image: linear-gradient(90deg, $grey-lightest 30%, transparent 100%);
+      outline: none;
+    }
+
+    &:active {
+      background-image: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0.00) 100%);
+    }
+  }
+}
+
+.slider-prev {
+  left: 4px;
+
+  @include media("tablet") {
+    left: 34px;
+  }
+
+  @include media("desktop") {
+    left: 0;
+  }
+}
+
+.slider-next {
+  right: 4px;
+  transform: rotate(180deg);
+
+  @include media("tablet") {
+    right: 34px;
+  }
+
+  @include media("desktop") {
+    right: 0;
   }
 }

@@ -13,5 +13,24 @@
   &--light {
     color: $primary;
     background-color: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $primary-light;
+  }
+
+  &:active {
+    background-color: $primary-dark;
+  }
+
+  &:disabled {
+    background-color: $grey;
   }
 }

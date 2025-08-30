@@ -1,5 +1,9 @@
 .logo {
   display: block;
+
+  &:active {
+    background-color: $secondary;
+  }
 }
 
 .logo__image {

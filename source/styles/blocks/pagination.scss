@@ -16,12 +16,20 @@
   padding: 8px 10px;
 
   &--nav {
-    padding: 10px 20px;
+    position: relative;
+    padding: 10px 15px;
+
+    @include media("tablet") {
+      padding-inline: 20px;
+    }
   }
 
   &--current {
     font-weight: 600;
     color: $black;
+    background-color: transparent;
+    pointer-events: none;
+    cursor: default;
   }
 }
 
@@ -34,5 +42,25 @@
   @include media("tablet") {
     position: relative;
     transform: scale(1);
+  }
+}
+
+.pagination__mark {
+  width: 10px;
+  height: 10px;
+  mask-image: url("../../icons/stack.svg#arrow");
+  background-color: $primary;
+
+  &--forward {
+    transform: rotate(180deg);
+  }
+
+  .pagination__link:focus &,
+  .pagination__link:active & {
+    background-color: $white;
+  }
+
+  @include media("tablet") {
+    display: none;
   }
 }

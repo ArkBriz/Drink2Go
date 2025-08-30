@@ -38,6 +38,7 @@
   }
 
   @include media("desktop") {
+    width: 1012px;
     padding-top: 49px;
   }
 }
@@ -91,8 +92,19 @@
 }
 
 .footer__address {
+  position: relative;
   display: block;
   margin-bottom: 16px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -19px;
+    display: block;
+    width: 13px;
+    height: 19px;
+    background-image: url("../../icons/stack.svg#address");
+  }
 
   @include media("tablet") {
     font-size: 14px;
@@ -101,7 +113,19 @@
 }
 
 .footer__phone {
+  position: relative;
   color: $black;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: -19px;
+    display: block;
+    width: 13px;
+    height: 16px;
+    background-image: url("../../icons/stack.svg#phone");
+  }
 }
 
 .footer__copyright {
@@ -122,5 +146,14 @@
   @include media("desktop") {
     margin: 0 auto;
     padding: 20px 0 40px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $primary;
+  }
+
+  &:active {
+    color: $primary-dark;
   }
 }

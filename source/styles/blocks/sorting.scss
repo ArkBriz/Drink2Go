@@ -1,4 +1,7 @@
 .sorting {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
@@ -9,14 +12,23 @@
 }
 
 .sorting__select {
-  width: 160px;
-  margin-left: 8px;
+  max-width: 165px;
 
   font-family: "Montserrat", "Arial", sans-serif;
-  font-size: inherit;
+  font-size: 14px;
   line-height: inherit;
   font-weight: inherit;
   color: $primary;
 
-  border: 1px solid $primary;
+  background-color: transparent;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
 }

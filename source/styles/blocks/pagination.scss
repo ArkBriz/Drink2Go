@@ -13,7 +13,11 @@
   align-items: center;
   min-width: 40px;
   min-height: 40px;
-  padding: 10px;
+  padding: 8px 10px;
+
+  &--nav {
+    padding: 10px 20px;
+  }
 
   &--current {
     font-weight: 600;
@@ -25,5 +29,10 @@
   @include media("mobile") {
     position: fixed;
     transform: scale(0);
+  }
+
+  @include media("tablet") {
+    position: relative;
+    transform: scale(1);
   }
 }

@@ -1,28 +1,63 @@
 .footer__container {
+  @include media("mobile") {
+    padding-inline: 0;
+  }
+
   @include media("tablet") {
     padding: 0 20px;
   }
 
   @include media("desktop") {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
     padding: 0 40px;
   }
 }
 
 .footer__socials {
-  padding: 22px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 22px 20px;
 
   @include media("tablet") {
     padding: 42px 0 32px;
   }
 
   @include media("desktop") {
+    width: 318px;
     padding-bottom: 0;
+  }
+}
+
+.footer__navigation {
+  @include media("tablet") {
+    display: flex;
+    gap: 30px;
+  }
+
+  @include media("desktop") {
+    padding-top: 49px;
   }
 }
 
 .footer__navigation-block {
   @include media("mobile") {
-    padding: 20px 0;
+    padding: 20px;
+    border-top: 1px solid $secondary;
+
+    &:last-child {
+      border-bottom: 1px solid $secondary;
+    }
+  }
+
+  @include media("tablet") {
+    width: 223px;
+  }
+
+  @include media("desktop") {
+    width: 318px;
   }
 }
 
@@ -58,6 +93,11 @@
 .footer__address {
   display: block;
   margin-bottom: 16px;
+
+  @include media("tablet") {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .footer__phone {
@@ -80,6 +120,7 @@
   }
 
   @include media("desktop") {
+    margin: 0 auto;
     padding: 20px 0 40px;
   }
 }

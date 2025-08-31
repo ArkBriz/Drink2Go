@@ -2,7 +2,7 @@
   @include media("tablet") {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px 30px;
+    gap: 40px 29px;
   }
 
   @include media("desktop") {
@@ -29,7 +29,13 @@
     padding-left: 52px;
   }
 
+  @include media("tablet") {
+    width: 223px;
+  }
+
   @include media("desktop") {
+    width: 318px;
+
     &:last-of-type {
       margin-bottom: 40px;
     }
@@ -37,26 +43,160 @@
 }
 
 .filters__title {
-  margin-bottom: 20px;
+  margin-bottom: 31px;
   padding: 0;
 
   font-weight: 600;
 }
 
+.filters__range {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  margin-bottom: 35px;
+
+  background-color: $grey-light;
+
+  &--disabled {
+    .filters__range-bar {
+      background-color: $grey-light;
+    }
+
+    .filters__range-toggle {
+      border-color: $grey-light;
+      cursor: not-allowed;
+
+      &:hover::before,
+      &:focus::before {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+.filters__range-bar {
+  position: absolute;
+  top: -1px;
+  height: 4px;
+  background-color: $primary;
+}
+
+.filters__range-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+
+  background-color: $white;
+  border: 2px solid $primary-light;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+
+    border-radius: 50%;
+    background-color: $white;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    background-color: rgba($primary, 0.25);
+  }
+
+  &:active::before {
+    background-color: $primary;
+  }
+}
+
+.toggle-min {
+  left: 0;
+}
+
+.toggle-max {
+  right: -12px;
+}
+
+.filters__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .filters__price-field {
   width: 118px;
+  height: 40px;
+  padding: 8px 10px;
+
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+
+  border: 2px solid $primary-light;
+  border-radius: 4px;
 
   @include media("tablet") {
     width: 88px;
   }
+
+  @include media("desktop") {
+    width: 134px;
+  }
+
+  &::placeholder {
+    color: $grey;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  &:hover {
+    border-color: $primary;
+    background-color: $secondary;
+    cursor: pointer;
+  }
+
+  &:focus {
+    border-color: $primary-dark;
+    background-color: $white;
+    outline: none;
+  }
+
+  &:disabled {
+    border-color: $grey-light;
+    background-color: $grey-lightest;
+    cursor: not-allowed;
+  }
 }
 
 .filters__control {
+  position: relative;
   display: block;
   margin-bottom: 20px;
+  cursor: pointer;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  &--disabled {
+    color: $grey;
+    cursor: not-allowed;
   }
 
   @include media("tablet") {
@@ -66,6 +206,96 @@
       width: 222px;
     }
   }
+}
+
+input[type="radio"] + .filters__control-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+
+  background-color: $white;
+  border: 2px solid $grey;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px $white ;
+}
+
+input[type="radio"]:checked + .filters__control-label::before {
+  border-color: $primary;
+  background-color: $primary;
+}
+
+.filters__control:hover input[type="radio"] + .filters__control-label::before,
+input[type="radio"]:focus + .filters__control-label::before {
+  border-color: $primary-light;
+  background-color: rgba($primary, 0.25);
+}
+
+input[type="radio"]:checked:focus + .filters__control-label::before {
+  background-color: $primary;
+}
+
+input[type="radio"]:disabled + .filters__control-label::before,
+input[type="radio"]:disabled:hover + .filters__control-label::before {
+  border-color: $grey-light ;
+  background-color: $white
+}
+
+input[type="radio"]:disabled:checked + .filters__control-label::before {
+  background-color: $grey-light;
+}
+
+input[type="checkbox"] + .filters__control-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 42px;
+  height: 24px;
+
+  background-color: $grey;
+  border: 2px solid $grey;
+  border-radius: 12px;
+}
+
+input[type="checkbox"] + .filters__control-label::after {
+  content: "";
+  position: absolute;
+  top: 1.8px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+
+  background-color: $white;
+  border-radius: 50%;
+
+  transition: transform 0.3s;
+}
+
+input[type="checkbox"]:checked + .filters__control-label::before {
+  background-color: $primary;
+  border-color: $primary;
+}
+
+input[type="checkbox"]:checked + .filters__control-label::after {
+  transform: translate(17px);
+}
+
+.filters__control:hover input[type="checkbox"] + .filters__control-label::before,
+input[type="checkbox"]:focus + .filters__control-label::before {
+  border-color: $primary-light;
+  background-color: rgba($primary, 0.25);
+}
+
+input[type="checkbox"]:disabled + .filters__control-label::before,
+input[type="checkbox"]:disabled:hover + .filters__control-label::before,
+input[type="checkbox"]:disabled:checked + .filters__control-label::before {
+  background-color: $grey-light;
+  border-color: $grey-light;
+}
+
+input[type="checkbox"]:disabled:checked + .filters__control-label::after {
+  background-color: $grey;
 }
 
 .filters__buttons {

@@ -149,8 +149,9 @@
               <fieldset class="filters__group">
                 <legend class="filters__title">Цена</legend>
                 <div class="filters__container">
+                  <!-- Для состояния disabled добавить модификатор --disabled -->
                   <div class="filters__range">
-                    <div class="filters__range-bar" style="left: 0; width: 192px;">
+                    <div class="filters__range-bar" style="left: 0; width: 85%;">
                       <button class="filters__range-toggle toggle-min" type="button">
                         <span class="visually-hidden">Изменить минимальную цену</span>
                       </button>
@@ -162,10 +163,10 @@
 
                   <div class="filters__price">
                     <label class="visually-hidden" for="min-price">от</label>
-                    <input class="filters__price-field" type="number" id="min-price" name="min-price" value="0" min="0" step="50">
-                    <span>-</span>
+                    <input class="filters__price-field" type="number" id="min-price" name="min-price" value="" min="0" step="50" placeholder="0">
+                    <span>–</span>
                     <label class="visually-hidden" for="max-price">до</label>
-                    <input class="filters__price-field" type="number" id="max-price" name="max-price" value="900" min="50" step="50">
+                    <input class="filters__price-field" type="number" id="max-price" name="max-price" value="123" min="50" step="50" placeholder="123">
                   </div>
                 </div>
               </fieldset>
@@ -173,14 +174,14 @@
               <fieldset class="filters__group filters__group--milk">
                 <legend class="filters__title">Наличие молока</legend>
 
-                <label class="filters__control">
-                  <input class="visually-hidden" type="radio" name="milk" value="no-matter" checked>
-                  <span class="filters__control-label">Неважно</span>
-                </label>
-                <label class="filters__control">
-                  <input class="visually-hidden" type="radio" name="milk" value="animal-milk">
-                  <span class="filters__control-label">Только животное</span>
-                </label>
+                  <label class="filters__control">
+                    <input class="visually-hidden" type="radio" name="milk" value="no-matter" checked>
+                    <span class="filters__control-label">Неважно</span>
+                  </label>
+                  <label class="filters__control">
+                    <input class="visually-hidden" type="radio" name="milk" value="animal-milk">
+                    <span class="filters__control-label">Только животное</span>
+                  </label>
                 <label class="filters__control">
                   <input class="visually-hidden" type="radio" name="milk" value="plant-milk">
                   <span class="filters__control-label">Только растительное</span>

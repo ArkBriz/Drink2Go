@@ -1,11 +1,32 @@
 .offer-slider {
   padding: 20px 0 60px;
   text-align: center;
-  background-color: $flat-white;
+  &--0 {
+    background-color: $flat-white;
+  }
+
+  &--1 {
+    background-color: $latte;
+  }
+
+  &--2 {
+    background-color: $espresso;
+  }
 
   @include media("tablet") {
     padding: 60px 0 0;
-    background-image: linear-gradient(to bottom, $flat-white 77%, $white 25%);
+
+    &--0 {
+      background-image: linear-gradient(to bottom, $flat-white 77%, $white 25%);
+    }
+
+    &--1 {
+      background-image: linear-gradient(to bottom, $latte 77%, $white 25%);
+    }
+
+    &--2 {
+      background-image: linear-gradient(to bottom, $espresso 77%, $white 25%);
+    }
   }
 
   @include media("desktop") {
@@ -26,7 +47,7 @@
     flex-wrap: wrap;
     column-gap: 30px;
     padding-left: 105px;
-    padding-right: 105px;
+    padding-right: 80px;
   }
 }
 
@@ -89,10 +110,20 @@
   margin: 0;
   margin-bottom: 20px;
 
+  @include media("mobile") {
+    br {
+      display: none;
+    }
+  }
+
   @include media("tablet") {
-    max-width: 580px;
+    max-width: 625px;
     font-size: 20px;
     line-height: 32px;
+
+    br {
+      display: inline;
+    }
   }
 
   @include media("desktop") {
@@ -172,11 +203,12 @@
 
 .offer-slider__button {
   position: absolute;
-  top: 49%;
-  width: 25px;
-  height: 40px;
+  top: 55px;
+  width: 40px;
+  height: 520px;
   padding: 10px 10px 10px 4px;
   background-color: transparent;
+  border: none;
 
   &::before {
     content: "";
@@ -194,7 +226,7 @@
   }
 
   @include media("tablet") {
-    top: 36%;
+    top: -60px;
   }
 
   @include media("desktop") {
@@ -207,10 +239,8 @@
       mask-position: center;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-image: linear-gradient(90deg, $grey-lightest 30%, transparent 100%);
-      outline: none;
     }
 
     &:active {

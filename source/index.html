@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="preload" href="#" type="font/woff2" as="font">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/index.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -69,7 +68,7 @@
     <main class="main main-container">
       <h1 class="visually-hidden">Главная страница магазина</h1>
 
-      <header class="offer-slider offer-slider--1">
+      <header class="offer-slider offer-slider--0">
         <div class="container">
           <div class="offer-slider__image-container">
             <picture>
@@ -81,7 +80,7 @@
           <div class="offer-slider__container">
             <h2 class="offer-slider__title section-title">Новинка!</h2>
             <p class="offer-slider__name">Декаф Флэт Уайт</p>
-            <p class="offer-slider__description">Свежесваренный кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
+            <p class="offer-slider__description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
             <div class="offer-slider__inner">
               <div class="offer-slider__price">
                 <span class="offer-slider__price-old"><del>295₽</del></span>
@@ -103,12 +102,12 @@
             </li>
           </ul>
 
-          <a class="offer-slider__button slider-prev" href="index-3.html">
+          <button class="offer-slider__button slider-prev">
           <span class="visually-hidden">Предыдущее кофе</span>
-          </a>
-          <a class="offer-slider__button slider-next" href="index-2.html">
+          </button>
+          <button class="offer-slider__button slider-next">
             <span class="visually-hidden">Следующее кофе</span>
-          </a>
+          </button>
         </div>
       </header>
 
@@ -438,5 +437,7 @@
         </a>
       </div>
     </footer>
+
+    <script src="scripts/index.js"></script>
   </body>
 </html>

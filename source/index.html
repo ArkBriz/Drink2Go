@@ -5,6 +5,7 @@
     <title>Drink2Go</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="preload" href="#" type="font/woff2" as="font">
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
@@ -352,7 +353,7 @@
 
       <section class="map">
         <h2 class="visually-hidden">Мы на карте</h2>
-        <div class="map__container"></div>
+        <div class="map__container" id="map" height="480"></div>
       </section>
     </main>
 
@@ -438,6 +439,7 @@
       </div>
     </footer>
 
+    <script src="vendor/leaflet/leaflet.js"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>

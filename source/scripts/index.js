@@ -21,6 +21,13 @@ const oldPrice = slider.querySelector('.offer-slider__price-old del');
 const newPrice = slider.querySelector('.offer-slider__price-new');
 const pagButtons = slider.querySelectorAll('.offer-slider__pagination-button');
 
+const TabIndex = {
+  ACTIVE: 0,
+  DISACTIVE: -1,
+}
+
+let currentIndex = 0;
+
 const coffeePhotos = [
   {
     photo1: 'images/flat-white@1x.png',
@@ -57,8 +64,6 @@ const descriptions = [
 const oldPrices = [295, 285, 395];
 const newPrices = [225, 265, 375];
 
-let currentIndex = 0;
-
 const getIndex = (index) => {
   const nextIndex = (index + 1) % coffeePhotos.length;
   const prevIndex = (index - 1 + coffeePhotos.length) % coffeePhotos.length;
@@ -69,11 +74,11 @@ const getIndex = (index) => {
 const changePagButton = (index) => {
   pagButtons.forEach((button) => {
     button.classList.remove('offer-slider__pagination-button--current');
-    button.tabIndex = 0;
+    button.tabIndex = TabIndex.ACTIVE;
   });
 
   pagButtons[index].classList.add('offer-slider__pagination-button--current');
-  pagButtons[index].tabIndex = -1;
+  pagButtons[index].tabIndex = TabIndex.DISACTIVE;
 };
 
 const changeData = (index) => {
@@ -132,3 +137,37 @@ filters.addEventListener('keydown', (evt) => {
     evt.target.checked = !evt.target.checked;
   }
 });
+
+// Карта
+const MAP_ZOOM = 20;
+
+const map = L.map('map')
+  .setView({
+    lat: 59.968360,
+    lng: 30.317550,
+  }, MAP_ZOOM );
+
+L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  },
+).addTo(map);
+
+const mapPin = L.icon({
+  iconUrl: './icons/stack.svg#pin',
+  iconSize: [38, 50],
+  iconAnchor: [19, 50],
+});
+
+const marker = L.marker(
+  {
+    lat: 59.968360,
+    lng: 30.317550,
+  },
+  {
+    icon: mapPin,
+  }
+);
+
+marker.addTo(map);

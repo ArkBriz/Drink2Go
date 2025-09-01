@@ -1,0 +1,12 @@
+.map__container {
+  width: 100%;
+  height: 420px;
+
+  @include media("tablet") {
+    height: 480px;
+  }
+
+  @include media("desktop") {
+    height: 540px;
+  }
+}

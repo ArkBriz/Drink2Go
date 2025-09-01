@@ -21,6 +21,10 @@
   line-height: 24px;
   border: none;
 
+  &--milk {
+    margin-bottom: 34px;
+  }
+
   &--milk .filters__control {
     padding-left: 34px;
   }
@@ -31,10 +35,12 @@
 
   @include media("tablet") {
     width: 223px;
+    margin-bottom: 0;
   }
 
   @include media("desktop") {
     width: 318px;
+    margin-bottom: 30px;
 
     &:last-of-type {
       margin-bottom: 40px;
@@ -43,10 +49,13 @@
 }
 
 .filters__title {
-  margin-bottom: 31px;
   padding: 0;
-
+  margin-bottom: 20px;
   font-weight: 600;
+
+  .filters__group--price & {
+    margin-bottom: 31px;
+  }
 }
 
 .filters__range {
@@ -56,6 +65,14 @@
   margin-bottom: 35px;
 
   background-color: $grey-light;
+
+  @include media("tablet") {
+    margin-bottom: 30px;
+  }
+
+  @include media("desktop") {
+    margin-bottom: 32px;
+  }
 
   &--disabled {
     .filters__range-bar {
@@ -87,35 +104,20 @@
   transform: translateY(-50%);
   width: 24px;
   height: 24px;
+  padding: 0;
 
   background-color: $white;
   border: 2px solid $primary-light;
   border-radius: 50%;
+  box-shadow: inset 0 0 0 2px $white;
   cursor: pointer;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    display: block;
-    width: 16px;
-    height: 16px;
-    margin: auto;
-
-    border-radius: 50%;
-    background-color: $white;
+  &:hover,
+  &:focus {
+    background-color: #ddd5f3;
   }
 
-  &:hover::before,
-  &:focus::before {
-    background-color: rgba($primary, 0.25);
-  }
-
-  &:active::before {
+  &:active {
     background-color: $primary;
   }
 }
@@ -125,7 +127,15 @@
 }
 
 .toggle-max {
-  right: -12px;
+  right: -24px;
+
+  @include media("tablet") {
+    right: -9px;
+  }
+
+  @include media("desktop") {
+    right: -22px;
+  }
 }
 
 .filters__price {
@@ -135,7 +145,7 @@
 }
 
 .filters__price-field {
-  width: 118px;
+  width: 115px;
   height: 40px;
   padding: 8px 10px;
 
@@ -147,6 +157,8 @@
 
   border: 2px solid $primary-light;
   border-radius: 4px;
+
+  appearance: textfield;
 
   @include media("tablet") {
     width: 88px;
@@ -163,6 +175,7 @@
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     appearance: none;
+    margin: 0;
   }
 
   &:hover {
@@ -206,6 +219,10 @@
       width: 222px;
     }
   }
+
+  @include media("desktop") {
+    width: 320px;
+  }
 }
 
 input[type="radio"] + .filters__control-label::before {
@@ -218,7 +235,8 @@ input[type="radio"] + .filters__control-label::before {
   background-color: $white;
   border: 2px solid $grey;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 2px $white ;
+  box-shadow: inset 0 0 0 2px $white;
+  transition: background-color 0.3s;
 }
 
 input[type="radio"]:checked + .filters__control-label::before {
@@ -238,8 +256,8 @@ input[type="radio"]:checked:focus + .filters__control-label::before {
 
 input[type="radio"]:disabled + .filters__control-label::before,
 input[type="radio"]:disabled:hover + .filters__control-label::before {
-  border-color: $grey-light ;
-  background-color: $white
+  border-color: $grey-light;
+  background-color: $white;
 }
 
 input[type="radio"]:disabled:checked + .filters__control-label::before {
@@ -256,12 +274,13 @@ input[type="checkbox"] + .filters__control-label::before {
   background-color: $grey;
   border: 2px solid $grey;
   border-radius: 12px;
+  transition: background-color 0.3s;
 }
 
 input[type="checkbox"] + .filters__control-label::after {
   content: "";
   position: absolute;
-  top: 1.8px;
+  top: 1.9px;
   left: 3px;
   width: 20px;
   height: 20px;
@@ -304,10 +323,30 @@ input[type="checkbox"]:disabled:checked + .filters__control-label::after {
 
   @include media("tablet") {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0 auto;
+    // padding-left: 30px;
+  }
+
+  @include media("desktop") {
+    justify-content: start;
+    margin: 0;
   }
 }
 
 .filters__button {
   padding: 8px 15px;
+
+  @include media("tablet") {
+    padding-inline: 20px;
+  }
+
+  @include media("desktop") {
+    padding-inline: 26px;
+
+    &.button--light {
+      padding-inline: 35px;
+    }
+  }
 }

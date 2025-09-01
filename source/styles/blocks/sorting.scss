@@ -1,10 +1,14 @@
 .sorting {
   display: flex;
   justify-content: space-between;
-  width: 280px;
+  max-width: 280px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
+
+  @include media("tablet") {
+    max-width: 650px;
+  }
 }
 
 .sorting__label {
@@ -12,12 +16,14 @@
 }
 
 .sorting__select {
-  max-width: 165px;
+  max-width: 156px;
+  margin-left: 18px;
 
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
   line-height: inherit;
   font-weight: inherit;
+  letter-spacing: 1.3px;
   color: $primary;
 
   background-color: transparent;

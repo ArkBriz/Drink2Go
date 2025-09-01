@@ -24,7 +24,7 @@ const pagButtons = slider.querySelectorAll('.offer-slider__pagination-button');
 const TabIndex = {
   ACTIVE: 0,
   DISACTIVE: -1,
-}
+};
 
 let currentIndex = 0;
 
@@ -59,10 +59,10 @@ const descriptions = [
   'Свежесваренный кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком — то, что нужно<br> для расслабления после тяжёлого рабочего дня',
   'Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор',
   'Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость'
-]
+];
 
-const oldPrices = [295, 285, 395];
-const newPrices = [225, 265, 375];
+const oldPrices = ['295₽', '285₽', '395₽'];
+const newPrices = ['225₽', '265₽', '375₽'];
 
 const getIndex = (index) => {
   const nextIndex = (index + 1) % coffeePhotos.length;
@@ -90,11 +90,11 @@ const changeData = (index) => {
   photo.src = coffeePhotos[index].photo1;
   photo.srcset = `${coffeePhotos[index].photo2} 2x`;
   photoSource.srcset = `${coffeePhotos[index].photo3} 1x, ${coffeePhotos[index].photo4} 2x`;
-}
+};
 
 nextButton.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % coffeePhotos.length;
-  const { nextIndex, prevIndex } = getIndex(currentIndex);
+  const { prevIndex } = getIndex(currentIndex);
 
   slider.classList.remove(`offer-slider--${prevIndex}`);
   slider.classList.add(`offer-slider--${currentIndex}`);
@@ -105,7 +105,7 @@ nextButton.addEventListener('click', () => {
 
 prevButton.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + coffeePhotos.length) % coffeePhotos.length;
-  const { nextIndex, prevIndex } = getIndex(currentIndex);
+  const { nextIndex } = getIndex(currentIndex);
 
   slider.classList.remove(`offer-slider--${nextIndex}`);
   slider.classList.add(`offer-slider--${currentIndex}`);
@@ -125,7 +125,7 @@ pagButtons.forEach((button, index) => {
 
     changeData(currentIndex);
     changePagButton(currentIndex);
-  })
+  });
 });
 
 // Выбор чекбоксов с клавиатуры
@@ -139,13 +139,16 @@ filters.addEventListener('keydown', (evt) => {
 });
 
 // Карта
+const mapContainer = document.querySelector('.map__container');
 const MAP_ZOOM = 20;
+
+mapContainer.classList.remove('map__container--no-js');
 
 const map = L.map('map')
   .setView({
     lat: 59.968360,
     lng: 30.317550,
-  }, MAP_ZOOM );
+  }, MAP_ZOOM);
 
 L.tileLayer(
   'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',

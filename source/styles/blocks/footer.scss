@@ -10,23 +10,28 @@
   @include media("desktop") {
     display: flex;
     flex-wrap: wrap;
+    align-items: start;
     column-gap: 30px;
     padding: 0 40px;
   }
 }
 
 .footer__socials {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 22px 20px;
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  padding: 21px 20px;
+  padding-bottom: 18px;
 
   @include media("tablet") {
-    padding: 42px 0 32px;
+    grid-template-columns: 170px 1fr;
+    padding: 42px 0 25px;
   }
 
   @include media("desktop") {
+    display: flex;
+    flex-direction: column;
     width: 318px;
+    padding-top: 40px;
     padding-bottom: 0;
   }
 }
@@ -45,7 +50,7 @@
 
 .footer__navigation-block {
   @include media("mobile") {
-    padding: 20px;
+    padding: 21px 20px 18px;
     border-top: 1px solid $secondary;
 
     &:last-child {
@@ -64,13 +69,14 @@
 
 .footer__title {
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 9px;
   font-size: 14px;
+  letter-spacing: 0.3px;
   color: $primary;
-}
 
-.footer__item:not(:last-child) {
-  margin-bottom: 12px;
+  @include media("tablet") {
+    margin-bottom: 7px;
+  }
 }
 
 .footer__list {
@@ -80,15 +86,33 @@
 }
 
 .footer__link {
+  display: block;
+  padding: 12px 0 9px;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 15px;
   text-transform: uppercase;
+  letter-spacing: 0.2px;
   color: $black;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus {
+    color: rgba($black, 0.6);
+  }
+
+  &:active {
+    background-color: rgba($secondary, 0.5);
+  }
 }
 
 .footer__contacts {
+  margin-top: 20px;
   padding-left: 19px;
   font-style: normal;
+
+  @include media("tablet") {
+    margin-top: 18px;
+  }
 }
 
 .footer__address {
@@ -114,7 +138,9 @@
 
 .footer__phone {
   position: relative;
+  display: block;
   color: $black;
+  transition: color 0.2s;
 
   &::before {
     content: "";
@@ -126,6 +152,16 @@
     height: 16px;
     background-image: url("../../icons/stack.svg#phone");
   }
+
+  @include media("tablet") {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    color: rgba($black, 0.6);
+  }
 }
 
 .footer__copyright {
@@ -133,7 +169,7 @@
   justify-content: center;
   align-items: center;
   gap: 4px;
-  padding: 20px 0 30px;
+  padding: 20px 10px 30px;
 
   font-size: 12px;
   line-height: 16px;

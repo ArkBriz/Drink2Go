@@ -1,3 +1,9 @@
+.socials__logo {
+  @include media("tablet") {
+    width: 170px;
+  }
+}
+
 .socials .logo__image {
   @include media("tablet") {
     width: 170px;
@@ -11,7 +17,7 @@
 
   @include media("desktop") {
     display: block;
-    margin-top: 10px;
+    margin-top: 4px;
     margin-bottom: 50px;
   }
 }
@@ -20,9 +26,21 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  width: 160px;
   margin: 0;
+  margin-left: auto;
   padding: 0;
   list-style-type: none;
+
+  @include media("tablet") {
+    width: 520px;
+    justify-content: end;
+  }
+
+  @include media("desktop") {
+    width: 318px;
+    justify-content: start;
+  }
 }
 
 .socials__link {
@@ -32,14 +50,12 @@
   height: 40px;
   padding: 10px;
   border-radius: 4px;
+  transition: background-color 0.3s;
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
 
     display: block;
     margin: auto;
@@ -47,6 +63,7 @@
     height: 20px;
 
     background-color: $grey;
+    transition: background-color 0.3s;
   }
 
   &--vk::before {
@@ -72,6 +89,6 @@
   }
 
   &:active {
-    background-color: rgba($primary, 0.25);;
+    background-color: rgba($primary, 0.25);
   }
 }

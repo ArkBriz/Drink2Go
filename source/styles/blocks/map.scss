@@ -9,4 +9,26 @@
   @include media("desktop") {
     height: 540px;
   }
+
+  &--no-js .map__image-container {
+    display: block;
+  }
+}
+
+.map__image-container {
+  display: none;
+
+  & img {
+    display: block;
+    margin: 0 auto;
+
+    @include media("tablet") {
+      width: 768px;
+    }
+
+    @include media("desktop") {
+      width: 1440px;
+      height: 540px;
+    }
+  }
 }

@@ -6,13 +6,19 @@
   font-size: 16px;
   line-height: 24px;
   color: $white;
+  overflow-wrap: break-word;
+
   background-color: $primary;
   border: none;
   border-radius: 4px;
+  transition: background-color 0.3s;
 
   &--light {
     color: $primary;
     background-color: $white;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
 
     &:hover,
     &:focus,

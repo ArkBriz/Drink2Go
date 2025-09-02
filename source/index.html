@@ -22,8 +22,8 @@
           <div class="nav__container">
             <a class="nav__logo logo" href="/">
               <picture>
-                <source media="(min-width: 1440px)" srcset="images/logo-desktop.svg" width="170" height="36" type="image/webp">
-                <source media="(min-width: 768px)" srcset="images/logo-tablet.svg" width="82" height="36" type="image/webp">
+                <source media="(min-width: 1440px)" srcset="images/logo-desktop.svg" width="170" height="36" type="image/svg+xml">
+                <source media="(min-width: 768px)" srcset="images/logo-tablet.svg" width="82" height="36" type="image/svg+xml">
                 <img class="logo__image" src="images/logo-mobile.svg" width="32" height="36" alt="Логотип Drink2Go.">
               </picture>
             </a>
@@ -65,7 +65,7 @@
             </li>
           </ul>
 
-          <button class="nav__toggler" type="button" aria-controls="nav" aria-expanded="false">
+          <button class="nav__toggler" type="button" aria-controls="nav">
             <span class="visually-hidden">Открыть меню сайта</span>
           </button>
         </nav>
@@ -367,7 +367,7 @@
               <source media="(max-width: 767px)" srcset="images/map-mobile@1x.webp 1x, images/map-mobile@2x.webp 2x" width="320" height="480" type="image/webp">
               <source media="(min-width: 1440px)" srcset="images/map-desktop@1x.jpg 1x, images/map-desktop@2x.jpg 2x" width="1440" height="540" type="image/jpg">
               <source media="(min-width: 768px)" srcset="images/map-tablet@1x.jpg 1x, images/map-tablet@2x.jpg 2x" width="768" height="480" type="image/jpg">
-              <img src="images/map-mobile@1x.jpg" srcset="images/map-mobile@2x.jpg 2x" width="320" height="480" alt="Карта с укзаанием местоположения.">
+              <img src="images/map-mobile@1x.jpg" srcset="images/map-mobile@2x.jpg 2x" width="320" height="480" alt="Карта с указанием местоположения.">
             </picture>
           </div>
         </div>
@@ -456,7 +456,7 @@
       </div>
     </footer>
 
-    <script src="vendor/leaflet/leaflet.js"></script>
-    <script src="scripts/index.js"></script>
+      <script src="vendor/leaflet/leaflet.js"></script>
+      <script src="scripts/index.js"></script>
   </body>
 </html>

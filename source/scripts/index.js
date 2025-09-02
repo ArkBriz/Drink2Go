@@ -140,15 +140,19 @@ filters.addEventListener('keydown', (evt) => {
 
 // Карта
 const mapContainer = document.querySelector('.map__container');
+const MAP__COORD = {
+  lat: 59.968360,
+  lng: 30.317550,
+};
 const MAP_ZOOM = 20;
 
 mapContainer.classList.remove('map__container--no-js');
 
 const map = L.map('map')
-  .setView({
-    lat: 59.968360,
-    lng: 30.317550,
-  }, MAP_ZOOM);
+  .setView(
+    MAP__COORD,
+    MAP_ZOOM
+  );
 
 L.tileLayer(
   'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -164,10 +168,7 @@ const mapPin = L.icon({
 });
 
 const marker = L.marker(
-  {
-    lat: 59.968360,
-    lng: 30.317550,
-  },
+  MAP__COORD,
   {
     icon: mapPin,
   }

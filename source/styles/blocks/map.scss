@@ -9,10 +9,10 @@
   @include media("desktop") {
     height: 540px;
   }
+}
 
-  &--no-js .map__image-container {
-    display: block;
-  }
+.map--no-js .map__image-container {
+  display: block;
 }
 
 .map__image-container {
